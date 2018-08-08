@@ -119,6 +119,9 @@ Loader.start = function (callback) {
 };
 
 function forkWorker(index, isPrimary) {
+	console.log('heroku $port ' +process.env.port);
+
+
 	var ports = getPorts();
 	var args = [];
 
@@ -129,6 +132,8 @@ function forkWorker(index, isPrimary) {
 	process.env.isPrimary = isPrimary;
 	process.env.isCluster = nconf.get('isCluster') || ports.length > 1;
 	process.env.port = ports[index];
+
+	console.log('my port ' +process.env.port);
 
 	var worker = fork(appPath, args, {
 		silent: silent,
