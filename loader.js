@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('Heroku $PORT ' + process.env.port);
+
 var	nconf = require('nconf');
 var fs = require('fs');
 var url = require('url');
@@ -119,8 +121,6 @@ Loader.start = function (callback) {
 };
 
 function forkWorker(index, isPrimary) {
-	console.log('heroku $port ' +process.env.port);
-
 
 	var ports = getPorts();
 	var args = [];
@@ -132,8 +132,6 @@ function forkWorker(index, isPrimary) {
 	process.env.isPrimary = isPrimary;
 	process.env.isCluster = nconf.get('isCluster') || ports.length > 1;
 	process.env.port = ports[index];
-
-	console.log('my port ' +process.env.port);
 
 	var worker = fork(appPath, args, {
 		silent: silent,
@@ -161,10 +159,12 @@ function getPorts() {
 		process.exit();
 	}
 	var urlObject = url.parse(_url);
-	var port = nconf.get('PORT') || nconf.get('port') || urlObject.port || 4567;
+	var port = process.env.PORT || nconf.get('PORT') || nconf.get('port') || urlObject.port || 4567;
 	if (!Array.isArray(port)) {
 		port = [port];
 	}
+	console.log("NodeBB will be using the following ports ");
+	console.log(port);
 	return port;
 }
 
