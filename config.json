@@ -1,6 +1,5 @@
 {
-    "url__": "http://127.0.0.1:3005",
-    "url": "https://forum.immigration.media",
+    "url": "http://forum.immigration.media",
     "secret": "5d6bb83b-f416-4c55-8183-aeace8e44aa4",
     "database": "mongo",
     "silent": false,
