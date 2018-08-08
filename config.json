@@ -1,0 +1,15 @@
+{
+    "url__": "http://127.0.0.1:3005",
+    "url": "https://immigration-forum.herokuapp.com",
+    "secret": "5d6bb83b-f416-4c55-8183-aeace8e44aa4",
+    "database": "mongo",
+    "silent": false,
+    "mongo": {
+        "host": "ds121345.mlab.com",
+        "port": "21345",
+        "username": "forum",
+        "password": "30recycled",
+        "database": "immigration-forum",
+        "uri": ""
+    }
+}
