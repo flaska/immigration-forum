@@ -25,6 +25,12 @@
 </head>
 
 <body class="{bodyClass} skin-{config.bootswatchSkin}">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML5P8NK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
 	<nav id="menu" class="slideout-menu hidden">
 		<div class="menu-profile">
 			<!-- IF user.uid -->
